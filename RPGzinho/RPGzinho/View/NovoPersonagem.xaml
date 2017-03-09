@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RPGzinho.View;assembly=RPGzinho"
+             x:Class="RPGzinho.View.NovoPersonagem"
+             BackgroundImage="BG">
+  <ContentPage.Content>
+       <StackLayout>
+      
+      <StackLayout x:Name="backLayout">
+        <StackLayout VerticalOptions="Start" HorizontalOptions="StartAndExpand">
+          <Button Image="back" x:Name="backButton" BackgroundColor="Transparent" BorderRadius="0" Clicked="BackClicked"/>
+        </StackLayout>
+
+        <Grid VerticalOptions="Start" HorizontalOptions="StartAndExpand" ColumnSpacing="0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <Button Grid.Row="0" Grid.Column="0" Text="Guerreiro" x:Name="WarriorBtn" TextColor="White" Clicked="WarriorClicked"/>
+          <BoxView Grid.Row="0" Grid.Column="0" x:Name="Line1" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Color="White" IsVisible="True"/>
+          <Button Grid.Row="0" Grid.Column="1" Text="Arqueiro" x:Name="ArcherBtn" TextColor="White" Clicked="ArcherClicked"/>
+          <BoxView Grid.Row="0" Grid.Column="1" x:Name="Line2" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Color="White" IsVisible="False"/>
+          <Button Grid.Row="0" Grid.Column="2" Text="Mago" x:Name="MageBtn" TextColor="White" Clicked="MageClicked"/>
+          <BoxView Grid.Row="0" Grid.Column="2" x:Name="Line3" HeightRequest="2" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Color="White" IsVisible="False"/>
+        </Grid>
+      </StackLayout>
+
+      <Grid x:Name="warriorGrid" Padding="10" IsVisible="True" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+        <Image Source="warrior"/>
+      </Grid>
+
+      <Grid x:Name="archerGrid" Padding="10" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+        <Image Source="archer"/>
+      </Grid>
+
+      <Grid x:Name="mageGrid" Padding="10" IsVisible="False" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+        <Image Source="mage"/>
+      </Grid>
+      
+      </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

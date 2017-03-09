@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RPGzinho.View.Principal"
+             BackgroundImage="BG">
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="Start" HorizontalOptions="Start">
+      <Button Image="back" x:Name="backButton" BackgroundColor="Transparent" BorderRadius="0" Clicked="BackClicked"/>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>
