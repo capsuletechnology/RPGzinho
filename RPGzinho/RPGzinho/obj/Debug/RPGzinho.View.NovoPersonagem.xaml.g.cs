@@ -23,19 +23,10 @@ namespace RPGzinho.View {
         private global::Xamarin.Forms.Button backButton;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button WarriorBtn;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.BoxView Line1;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button ArcherBtn;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.BoxView Line2;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Button MageBtn;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.BoxView Line3;
@@ -44,25 +35,46 @@ namespace RPGzinho.View {
         private global::Xamarin.Forms.Grid warriorGrid;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image warriorImage;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry Entry1;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Grid archerGrid;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image archerImage;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry Entry2;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Grid mageGrid;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image mageImage;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Entry Entry3;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(NovoPersonagem));
             backLayout = this.FindByName<global::Xamarin.Forms.StackLayout>("backLayout");
             backButton = this.FindByName<global::Xamarin.Forms.Button>("backButton");
-            WarriorBtn = this.FindByName<global::Xamarin.Forms.Button>("WarriorBtn");
             Line1 = this.FindByName<global::Xamarin.Forms.BoxView>("Line1");
-            ArcherBtn = this.FindByName<global::Xamarin.Forms.Button>("ArcherBtn");
             Line2 = this.FindByName<global::Xamarin.Forms.BoxView>("Line2");
-            MageBtn = this.FindByName<global::Xamarin.Forms.Button>("MageBtn");
             Line3 = this.FindByName<global::Xamarin.Forms.BoxView>("Line3");
             warriorGrid = this.FindByName<global::Xamarin.Forms.Grid>("warriorGrid");
+            warriorImage = this.FindByName<global::Xamarin.Forms.Image>("warriorImage");
+            Entry1 = this.FindByName<global::Xamarin.Forms.Entry>("Entry1");
             archerGrid = this.FindByName<global::Xamarin.Forms.Grid>("archerGrid");
+            archerImage = this.FindByName<global::Xamarin.Forms.Image>("archerImage");
+            Entry2 = this.FindByName<global::Xamarin.Forms.Entry>("Entry2");
             mageGrid = this.FindByName<global::Xamarin.Forms.Grid>("mageGrid");
+            mageImage = this.FindByName<global::Xamarin.Forms.Image>("mageImage");
+            Entry3 = this.FindByName<global::Xamarin.Forms.Entry>("Entry3");
         }
     }
 }

@@ -5,7 +5,7 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="RPGzinho" android:icon="@drawable/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="RPGzinho" android:theme="@style/MainTheme" android:name="md5a208241088659dceb54810e375091d95.MainActivity" />
+    <activity android:configChanges="orientation|screenSize" android:icon="@drawable/icon" android:label="RPGzinho" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="md5a208241088659dceb54810e375091d95.MainActivity" />
     <activity android:configChanges="orientation|screenSize" android:label="RPGzinho" android:noHistory="true" android:theme="@style/SplashTheme" android:name="md5a208241088659dceb54810e375091d95.Splash">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

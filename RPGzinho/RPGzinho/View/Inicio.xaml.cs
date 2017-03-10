@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,18 @@ namespace RPGzinho.View
         public Inicio()
         {
             NavigationPage.SetHasNavigationBar(this, false);
-            InitializeComponent(); 
+            InitializeComponent();
 
-            Character1 = true;
+            Character1 = false;
             Character2 = false;
 
-            if (Character1) { ImagemRow0.Source = "map.png"; FixFrame1 = false; }               
+            //using (var dados = new DAO.PersonagemDAO())
+            //{
+            //    ObservableCollection<Model.Personagem> ListaPersonagem;
+            //    ListaPersonagem = new ObservableCollection<Model.Personagem>(dados.Listar());
+            //}
+
+            if (Character1) { ImagemRow0.Source = "map.png"; FixFrame1 = false; }
             else { ImagemRow0.Source = "envelope.png"; FixFrame1 = true; }
 
             if (Character2) { ImagemRow1.Source = "map.png"; FixFrame2 = false; }
@@ -39,28 +46,14 @@ namespace RPGzinho.View
 
         protected override async void OnAppearing()
         {
-            await Animation1();
             await Task.WhenAll(
-                LogoFade(),
-                Titulo.FadeTo(1, 1000, Easing.CubicIn),
-                SubGrid.FadeTo(1, 1000, Easing.CubicIn)
+                Logo.RotateYTo(360 * 10, 1000, Easing.CubicIn),
+                Logo.FadeTo(1, 1000, Easing.CubicIn),
+                Titulo.FadeTo(1, 1500, Easing.CubicIn),
+                SubGrid.FadeTo(1, 1500, Easing.CubicIn)
             );
 
             Animation2();
-        }
-
-        async Task LogoFade()
-        {
-            await Logo.FadeTo(0, 500, Easing.CubicIn);
-            await Logo.FadeTo(1, 500, Easing.CubicIn);
-        }
-
-        async Task Animation1()
-        {
-            await Task.WhenAll(
-                Logo.RotateYTo(360 * 10, 1500, Easing.CubicIn),
-                Logo.FadeTo(1, 1500, Easing.CubicIn)
-            );
         }
 
         async void Animation2()
@@ -72,7 +65,7 @@ namespace RPGzinho.View
             }
         }
 
-        async void Imagem0Clicked(object sender, EventArgs e)
+        async void Imagem1Clicked(object sender, EventArgs e)
         {
             await Model.Repositorio.Fade(ImagemRow0);
 
@@ -82,7 +75,7 @@ namespace RPGzinho.View
                 Application.Current.MainPage = new NovoPersonagem();
         }
 
-        async void Imagem1Clicked(object sender, EventArgs e)
+        async void Imagem2Clicked(object sender, EventArgs e)
         {
             await Model.Repositorio.Fade(ImagemRow1);
 

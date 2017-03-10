@@ -22,19 +22,6 @@ namespace RPGzinho.Model
             await button.FadeTo(1);
         }
 
-        public async static Task FadeGrid(Grid grid)
-        {
-            await grid.FadeTo(.5);
-            await grid.FadeTo(1);
-        }
-
-        public async static Task FadeStack(StackLayout stacklayout)
-        {
-            await stacklayout.FadeTo(.5);
-            await stacklayout.FadeTo(1);
-        }
-
-
         // Impede de fechar o app sem confirmação caso o botão voltar do celular seja pressionado.
         // Usar no método 'protected override bool OnBackButtonPressed()'
         public static bool SairAplicativo(Page page)

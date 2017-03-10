@@ -12,7 +12,8 @@ namespace RPGzinho
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new View.Inicio());
+            DependencyService.Register<DAO.PersonagemDAO>();
+            MainPage = new View.Inicio();
         }
 
         protected override void OnStart()
