@@ -49,5 +49,10 @@ C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\obj\Debu
 C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\obj\Debug\RPGzinho.dll
 C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\obj\Debug\RPGzinho.pdb
 C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\obj\Debug\RPGzinho.csprojResolveAssemblyReference.cache
+C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\bin\Debug\Mono.Android.dll
+C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\bin\Debug\Mono.Android.xml
+C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\obj\Debug\RPGzinho.View.Inicio2.xaml.g.cs
+C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\obj\Debug\RPGzinho.dll.mdb
+C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\bin\Debug\RPGzinho.dll.mdb
 C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\obj\Debug\RPGzinho.dll.mdb
 C:\Users\Kingdom\Documents\CapsuleTechnology\RPGzinho\RPGzinho\RPGzinho\bin\Debug\RPGzinho.dll.mdb

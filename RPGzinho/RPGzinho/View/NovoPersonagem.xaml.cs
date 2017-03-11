@@ -10,11 +10,13 @@ namespace RPGzinho.View
 {
     public partial class NovoPersonagem : ContentPage
     {
-        public NovoPersonagem()
+        int slotPersonagem;
+
+        public NovoPersonagem(int slot)
         {
             NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
-
+            slotPersonagem = slot;
             backLayout.BackgroundColor = Color.FromHex("#FFAB00");
         }
 
@@ -86,10 +88,10 @@ namespace RPGzinho.View
             }
             else
             {
-                Model.Personagem personagem;
-                personagem = new Model.Personagem(Entry1.Text, "Guerreiro");
-
-                using (var dados = new DAO.PersonagemDAO()) { dados.Insert(personagem); }
+                using (var dados = new DAO.PersonagemDAO())
+                {
+                    dados.Insert(Model.Repositorio.CriarPersonagem(Entry1.Text, "Guerreiro", slotPersonagem));
+                }
 
                 await DisplayAlert(Entry1.Text + " - Guerreiro", "Personagem criado com sucesso!", "OK");
             }
@@ -104,10 +106,10 @@ namespace RPGzinho.View
             }
             else
             {
-                Model.Personagem personagem;
-                personagem = new Model.Personagem(Entry2.Text, "Arqueiro");
-
-                using (var dados = new DAO.PersonagemDAO()) { dados.Insert(personagem); }
+                using (var dados = new DAO.PersonagemDAO())
+                {
+                    dados.Insert(Model.Repositorio.CriarPersonagem(Entry2.Text, "Arqueiro", slotPersonagem));
+                }
 
                 await DisplayAlert(Entry2.Text + " - Arqueiro", "Personagem criado com sucesso!", "OK");
             }
@@ -124,10 +126,10 @@ namespace RPGzinho.View
             }
             else
             {
-                Model.Personagem personagem;
-                personagem = new Model.Personagem(Entry3.Text, "Mago");
-
-                using (var dados = new DAO.PersonagemDAO()) { dados.Insert(personagem); }
+                using (var dados = new DAO.PersonagemDAO())
+                {
+                    dados.Insert(Model.Repositorio.CriarPersonagem(Entry3.Text, "Mago", slotPersonagem));
+                }
 
                 await DisplayAlert(Entry3.Text + " - Mago", "Personagem criado com sucesso!", "OK");
             }

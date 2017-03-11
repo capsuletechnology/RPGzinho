@@ -1,4 +1,5 @@
-﻿using RPGzinho.Service;
+﻿using RPGzinho.Services;
+using SQLite.Net.Interop;
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
@@ -16,18 +17,23 @@ namespace RPGzinho.DAO
         public void init()
         {
             var config = DependencyService.Get<IConfig>();
-            _conexao = new SQLite.Net.SQLiteConnection(config.Plataforma, System.IO.Path.Combine(config.Diretorio, "banco.db3"));
+            _conexao = new SQLite.Net.SQLiteConnection(config.Plataforma, System.IO.Path.Combine(config.Diretorio, "banco1.db3"));
             _conexao.CreateTable<T>();
         }
 
         public void Insert(T objeto)
         {
-            _conexao.InsertWithChildren(objeto);
+            _conexao.Insert(objeto);
         }
 
         public void Update(T objeto)
         {
-            _conexao.UpdateWithChildren(objeto);
+            _conexao.Update(objeto);
+        }
+
+        public async Task Deletar(T objeto)
+        {
+            _conexao.Delete(objeto, recursive: true);
         }
 
         public void Delete(T objeto)

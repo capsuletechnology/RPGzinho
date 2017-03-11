@@ -17,22 +17,16 @@ namespace RPGzinho.View {
     public partial class Inicio : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Grid GridMaster;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image Logo;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image Titulo;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Grid SubGrid;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Image ImagemRow0;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.Image ImagemRow1;
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.StackLayout Frame1Layout;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Frame Frame1;
@@ -44,7 +38,10 @@ namespace RPGzinho.View {
         private global::Xamarin.Forms.Label LbClasse1;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
-        private global::Xamarin.Forms.StackLayout Frame2Layout;
+        private global::Xamarin.Forms.Image x1;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image ImagemRow1;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Frame Frame2;
@@ -56,21 +53,24 @@ namespace RPGzinho.View {
         private global::Xamarin.Forms.Label LbClasse2;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Image x2;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(Inicio));
+            GridMaster = this.FindByName<global::Xamarin.Forms.Grid>("GridMaster");
             Logo = this.FindByName<global::Xamarin.Forms.Image>("Logo");
             Titulo = this.FindByName<global::Xamarin.Forms.Image>("Titulo");
-            SubGrid = this.FindByName<global::Xamarin.Forms.Grid>("SubGrid");
             ImagemRow0 = this.FindByName<global::Xamarin.Forms.Image>("ImagemRow0");
-            ImagemRow1 = this.FindByName<global::Xamarin.Forms.Image>("ImagemRow1");
-            Frame1Layout = this.FindByName<global::Xamarin.Forms.StackLayout>("Frame1Layout");
             Frame1 = this.FindByName<global::Xamarin.Forms.Frame>("Frame1");
             LbNome1 = this.FindByName<global::Xamarin.Forms.Label>("LbNome1");
             LbClasse1 = this.FindByName<global::Xamarin.Forms.Label>("LbClasse1");
-            Frame2Layout = this.FindByName<global::Xamarin.Forms.StackLayout>("Frame2Layout");
+            x1 = this.FindByName<global::Xamarin.Forms.Image>("x1");
+            ImagemRow1 = this.FindByName<global::Xamarin.Forms.Image>("ImagemRow1");
             Frame2 = this.FindByName<global::Xamarin.Forms.Frame>("Frame2");
             LbNome2 = this.FindByName<global::Xamarin.Forms.Label>("LbNome2");
             LbClasse2 = this.FindByName<global::Xamarin.Forms.Label>("LbClasse2");
+            x2 = this.FindByName<global::Xamarin.Forms.Image>("x2");
         }
     }
 }

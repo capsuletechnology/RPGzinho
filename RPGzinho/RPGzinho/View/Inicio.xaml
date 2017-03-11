@@ -4,22 +4,90 @@
              x:Class="RPGzinho.View.Inicio"
              BackgroundImage="BG">
   <ContentPage.Content>
-    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="10">
-      <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+    <Grid Padding="10" x:Name="GridMaster">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <Image x:Name="Logo" Opacity="0" Source="logo" Grid.Row="0"/>
+
+      <Image x:Name="Titulo" Source="titulo" Grid.Row="1"/>
+
+      <Grid Grid.Row="2">
         <Grid.RowDefinitions>
           <RowDefinition Height="*"/>
-          <RowDefinition Height="*"/>
-          <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <Image Grid.Row="0" x:Name="Logo" Source="logo" Opacity="0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="100" HeightRequest="200"/>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="80"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="ImagemRow0" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Image1Tapped" NumberOfTapsRequired="1"/>
+          </Image.GestureRecognizers>
+        </Image>
+        <Frame x:Name="Frame1" Grid.Row="0" Grid.Column="1" Padding="10" Margin="-5,30,0,25" HorizontalOptions="FillAndExpand">
+          <Grid>
+            <Grid.ColumnDefinitions ColumnSpacing="0">
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+              <Label x:Name="LbNome1" Text="" FontSize="17" TextColor="Black" FontAttributes="Bold"/>
+              <Label x:Name="LbClasse1" IsVisible="False" Text="" FontSize="14" TextColor="Black"/>
+            </StackLayout>
+            <Image x:Name="x1" Source="x" IsVisible="False" Grid.Column="1" HorizontalOptions="End">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Excluir1Tapped" NumberOfTapsRequired="1"/>
+              </Image.GestureRecognizers>
+            </Image>
+          </Grid>
+        </Frame>
+      </Grid>
+
+      <Grid Grid.Row="3">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions ColumnSpacing="0">
+          <ColumnDefinition Width="80"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="ImagemRow1" Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Image2Tapped" NumberOfTapsRequired="1"/>
+          </Image.GestureRecognizers>
+        </Image>
+        <Frame x:Name="Frame2" Grid.Row="0" Grid.Column="1" Padding="10" Margin="-5,30,0,25" HorizontalOptions="FillAndExpand">
+          <Grid>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+              <Label x:Name="LbNome2" Text="" FontSize="17" TextColor="Black" FontAttributes="Bold"/>
+              <Label x:Name="LbClasse2" IsVisible="False" Text="" FontSize="14" TextColor="Black"/>
+            </StackLayout>
+            <Image x:Name="x2" Source="x" IsVisible="False" Grid.Column="1" HorizontalOptions="EndAndExpand">
+              <Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Excluir2Tapped" NumberOfTapsRequired="1"/>
+              </Image.GestureRecognizers>
+            </Image>
+          </Grid>
+        </Frame>
+      </Grid>
+
+      <!--<Image Grid.Row="0" x:Name="Logo" Source="logo" Opacity="0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" WidthRequest="100" HeightRequest="200"/>
         
         <Image Grid.Row="1" x:Name="Titulo" Source="titulo" Opacity="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
         
         <Grid Grid.Row="2" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" x:Name="SubGrid" Opacity="0">
           <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
           </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80"/>
@@ -39,23 +107,41 @@
 
           <StackLayout x:Name="Frame1Layout" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HeightRequest="80" Padding="0,0,0,0" Margin="-15, 20, 0, 20">
             <Frame x:Name="Frame1" Padding="10">
-              <StackLayout VerticalOptions="Center">
-                <Label x:Name="LbNome1" Text="Jean Carlo de Souza" TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
-                <Label x:Name="LbClasse1" Text="Guerreiro Nv. 5" TextColor="Black" FontSize="17" HorizontalTextAlignment="Start"/>
-              </StackLayout>
+              <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*"/>
+                  <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" x:Name="LbNome1" Text="" TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Start"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Label Grid.Row="1" Grid.Column="0" x:Name="LbClasse1" Text="" TextColor="Black" FontSize="17" HorizontalTextAlignment="Start"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                <Button x:Name="xBtn1" Image="x" BackgroundColor="Transparent" BorderRadius="0" Grid.RowSpan="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+              </Grid>
             </Frame>
           </StackLayout>
 
           <StackLayout x:Name="Frame2Layout" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HeightRequest="80" Padding="0,0,0,0" Margin="-15, 20, 0, 20">
             <Frame x:Name="Frame2" Padding="10">
-              <StackLayout VerticalOptions="Center">
-                <Label x:Name="LbNome2" Text="Toque na carta para começar..." TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
-                <Label x:Name="LbClasse2" Text="" IsVisible="False" TextColor="Black" FontSize="17" HorizontalTextAlignment="Start"/>
-              </StackLayout>
+              <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*"/>
+                  <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*"/>
+                  <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" x:Name="LbNome2" Text="" TextColor="Black" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
+                <Label Grid.Row="1" Grid.Column="0" x:Name="LbClasse2" Text="" TextColor="Black" FontSize="17" HorizontalTextAlignment="Start"/>
+                <Button x:Name="xBtn2" Image="x" BackgroundColor="Transparent" BorderRadius="0" Grid.RowSpan="2" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+              </Grid>
             </Frame>
           </StackLayout>
-        </Grid>
-      </Grid>
-    </StackLayout>
+        </Grid>-->
+
+    </Grid>
   </ContentPage.Content>
 </ContentPage>

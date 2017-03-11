@@ -89,6 +89,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CloseApplication.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="app.config" />

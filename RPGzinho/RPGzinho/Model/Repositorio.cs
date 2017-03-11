@@ -22,6 +22,47 @@ namespace RPGzinho.Model
             await button.FadeTo(1);
         }
 
+        public static Personagem CriarPersonagem(string nome, string classe, int slot)
+        {
+            Personagem personagem = new Personagem();
+
+            if (classe.Equals("Guerreiro"))
+            {
+                personagem.Nome = nome;
+                personagem.Classe = classe;
+                personagem.Vida = 125;
+                personagem.Forca = 15;
+                personagem.Defesa = 0;
+                personagem.Level = 1;
+                personagem.Exp = 0;
+                personagem.Slot = slot;
+            }
+            else if (classe.Equals("Arqueiro"))
+            {
+                personagem.Nome = nome;
+                personagem.Classe = classe;
+                personagem.Vida = 100;
+                personagem.Forca = 12;
+                personagem.Defesa = 0;
+                personagem.Level = 1;
+                personagem.Exp = 0;
+                personagem.Slot = slot;
+            }
+            else if (classe.Equals("Mago"))
+            {
+                personagem.Nome = nome;
+                personagem.Classe = classe;
+                personagem.Vida = 85;
+                personagem.Forca = 8;
+                personagem.Defesa = 0;
+                personagem.Level = 1;
+                personagem.Exp = 0;
+                personagem.Slot = slot;
+            }
+
+            return personagem;
+        }
+
         // Impede de fechar o app sem confirmação caso o botão voltar do celular seja pressionado.
         // Usar no método 'protected override bool OnBackButtonPressed()'
         public static bool SairAplicativo(Page page)

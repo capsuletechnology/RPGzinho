@@ -11,34 +11,21 @@ namespace RPGzinho.View
 {
     public partial class Inicio : ContentPage
     {
+        ObservableCollection<Model.Personagem> ListaPersonagem;
+        Model.Personagem personagem1;
+        Model.Personagem personagem2;
+
         bool Character1 = false;
         bool Character2 = false;
-
-        bool FixFrame1 = false;
-        bool FixFrame2 = false;
 
         public Inicio()
         {
             NavigationPage.SetHasNavigationBar(this, false);
-            InitializeComponent();
+            GridMaster.IsVisible = false;
+            InitializeComponent();            
 
-            Character1 = false;
-            Character2 = false;
-
-            //using (var dados = new DAO.PersonagemDAO())
-            //{
-            //    ObservableCollection<Model.Personagem> ListaPersonagem;
-            //    ListaPersonagem = new ObservableCollection<Model.Personagem>(dados.Listar());
-            //}
-
-            if (Character1) { ImagemRow0.Source = "map.png"; FixFrame1 = false; }
-            else { ImagemRow0.Source = "envelope.png"; FixFrame1 = true; }
-
-            if (Character2) { ImagemRow1.Source = "map.png"; FixFrame2 = false; }
-            else { ImagemRow1.Source = "envelope.png"; FixFrame2 = true; }
-
-            if (FixFrame1) { Frame1Layout.Padding = new Thickness(0, 5, 0, 0); }
-            if (FixFrame2) { Frame2Layout.Padding = new Thickness(0, 5, 0, 0); }
+            //if (FixFrame1) { Frame1Layout.Padding = new Thickness(0, 0, 0, 0); }
+            //if (FixFrame2) { Frame2Layout.Padding = new Thickness(0, 0, 0, 0); }
 
             Frame1.BackgroundColor = Color.FromRgb(250, 250, 210);
             Frame2.BackgroundColor = Color.FromRgb(250, 250, 210);
@@ -49,8 +36,8 @@ namespace RPGzinho.View
             await Task.WhenAll(
                 Logo.RotateYTo(360 * 10, 1000, Easing.CubicIn),
                 Logo.FadeTo(1, 1000, Easing.CubicIn),
-                Titulo.FadeTo(1, 1500, Easing.CubicIn),
-                SubGrid.FadeTo(1, 1500, Easing.CubicIn)
+                Titulo.FadeTo(1, 1500, Easing.CubicIn)
+                //SubGrid.FadeTo(1, 1500, Easing.CubicIn)
             );
 
             Animation2();
@@ -65,24 +52,134 @@ namespace RPGzinho.View
             }
         }
 
-        async void Imagem1Clicked(object sender, EventArgs e)
+        void Carregar()
+        {
+            GridMaster.IsVisible = false;
+
+            using (var dados = new DAO.PersonagemDAO())
+            {
+                ListaPersonagem = new ObservableCollection<Model.Personagem>(dados.Listar());
+            }
+
+            foreach (var item in ListaPersonagem)
+            {
+                if (item.Slot == 1)
+                {
+                    Character1 = true;
+                    personagem1 = item;
+                }
+
+                if (item.Slot == 2)
+                {
+                    Character2 = true;
+                    personagem2 = item;
+                }
+            }
+
+            if (Character1)
+            {
+                ImagemRow0.Source = "map.png";
+                LbNome1.Text = personagem1.Nome;
+                LbClasse1.Text = personagem1.Classe;
+                LbClasse1.IsVisible = true;
+                x1.IsVisible = true;
+            }
+            else
+            {
+                LbClasse1.IsVisible = false;
+                x1.IsVisible = false;
+                ImagemRow0.Source = "letter.png";
+                LbNome1.Text = "Toque na carta para começar...";
+            }
+
+            if (Character2)
+            {
+                ImagemRow1.Source = "map.png";
+                LbNome2.Text = personagem2.Nome;
+                LbClasse2.Text = personagem2.Classe;
+                LbClasse2.IsVisible = true;
+                x2.IsVisible = true;
+            }
+            else
+            {
+                LbClasse2.IsVisible = false;
+                x2.IsVisible = false;
+                ImagemRow1.Source = "letter.png";
+                LbNome2.Text = "Toque na carta para começar...";
+            }
+
+            GridMaster.IsVisible = true;
+        }
+
+        async void Image1Tapped(object sender, EventArgs e)
         {
             await Model.Repositorio.Fade(ImagemRow0);
 
             if (Character1)
                 Application.Current.MainPage = new Principal();
             else
-                Application.Current.MainPage = new NovoPersonagem();
+                Application.Current.MainPage = new NovoPersonagem(1);
         }
 
-        async void Imagem2Clicked(object sender, EventArgs e)
+        async void Image2Tapped(object sender, EventArgs e)
         {
             await Model.Repositorio.Fade(ImagemRow1);
 
             if (Character2)
                 Application.Current.MainPage = new Principal();
             else
-                Application.Current.MainPage = new NovoPersonagem();
+                Application.Current.MainPage = new NovoPersonagem(2);
+        }
+
+
+        async void Excluir1Tapped(object sender, EventArgs e)
+        {
+            await Model.Repositorio.Fade(x1);
+
+            Task<bool> question = DisplayAlert("DELETAR PERSONAGEM", "Tem certeza que deseja deletar esse personagem?", "Sim", "Não");
+            await question.ContinueWith(task =>
+            {
+                if (task.Result)
+                {
+                    using (var dados = new DAO.PersonagemDAO())
+                    {
+                        foreach (var item in dados.Listar())
+                        {
+                            if (item.Nome.Equals(LbNome1.Text))
+                            {
+                                dados.Delete(item);
+                            }
+                        }
+                    }
+                }
+            });
+
+            return;
+        }
+
+
+        async void Excluir2Tapped(object sender, EventArgs e)
+        {
+            await Model.Repositorio.Fade(x2);
+
+            Task<bool> question = DisplayAlert("DELETAR PERSONAGEM", "Tem certeza que deseja deletar esse personagem?", "Sim", "Não");
+            await question.ContinueWith(task =>
+            {
+                if (task.Result)
+                {
+                    using (var dados = new DAO.PersonagemDAO())
+                    {
+                        foreach (var item in dados.Listar())
+                        {
+                            if (item.Nome.Equals(LbNome2.Text))
+                            {
+                                dados.Delete(item);
+                            }
+                        }
+                    }
+                }
+            });
+            return;
         }
 
         //async void TapImagem(object sender, EventArgs e)

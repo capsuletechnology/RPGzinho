@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RPGzinho.View.Inicio2"
+             BackgroundImage="BG">
+  <ContentPage.Content>
+    <Grid Padding="10">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+
+      <Image Source="logo" Grid.Row="0"/>
+      
+      <Image Source="titulo" Grid.Row="1"/>
+
+      <Grid Grid.Row="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="100"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="letter" Grid.Row="0" Grid.Column="0">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Image1Tapped" NumberOfTapsRequired="1"/>
+          </Image.GestureRecognizers>
+        </Image>
+        <Frame Grid.Row="0" Grid.Column="1" Margin="0,30,0,25"/>
+      </Grid>
+
+      <Grid Grid.Row="3">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="100"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="letter" Grid.Row="0" Grid.Column="0">
+          <Image.GestureRecognizers>
+            <TapGestureRecognizer Tapped="Image2Tapped" NumberOfTapsRequired="1"/>
+          </Image.GestureRecognizers>
+        </Image>
+        <Frame Grid.Row="0" Grid.Column="1" Margin="0,30,0,25"/>
+      </Grid>
+      
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
